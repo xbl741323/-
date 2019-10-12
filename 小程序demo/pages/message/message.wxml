@@ -1,0 +1,19 @@
+<!--pages/message/message.wxml-->
+<view>
+  <view>{{ msg }}</view>
+  <view>num:{{ num }}</view>
+  <view>flag:{{ flag }}</view>
+  <view data-id="{{id}}">
+    <view style="color:red;background-color:{{myColor}}">姓名：{{ person.name }}</view>
+    <view>年龄：{{ person.age }}</view>
+    <view>爱好：{{ person.hobby }}</view>
+    <checkbox checked="{{flag}}"></checkbox>
+    <view wx:for="{{arr}}" wx:key="{{index}}">
+      {{index}}:{{item}}
+    </view>
+    <view wx:for="{{student}}" wx-key="{{index}}">
+      {{index}}:{{item}}
+    </view>
+  </view>
+</view>
+<view class="box"></view>
