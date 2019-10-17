@@ -44,3 +44,60 @@ page {
 }
 
 /* 视频列表 */
+
+.video_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rpx;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.vidoe_item {
+  width: 48%;
+  margin-bottom: 20rpx;
+}
+
+.video_img {
+  position: relative;
+}
+
+.video_img image {
+  width: 100%;
+  border-radius: 15rpx;
+}
+
+.video_img .video_info {
+  display: flex;
+  position: absolute;
+  bottom: 10rpx;
+  left: 0;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 28rpx;
+  color: #fff;
+  padding: 5rpx;
+}
+
+.video_img .video_info .play_count_wrap {
+  
+}
+.video_img .video_info .play_count_wrap .play_count{
+  margin-left: 7rpx;
+}
+
+.video_img .video_info .comment_count_row {
+  
+}
+.video_img .video_info .comment_count_row .comment_count{
+  margin-left: 7rpx;
+}
+
+.video_title {
+  height: 80rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+}
+.video_title .video_title_content{
+ text-align: left;
+}
