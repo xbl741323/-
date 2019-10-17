@@ -1,2 +1,12 @@
 /* pages/message/message.wxss */
-@import "../../wxss/test.wxss";
+
+/* @import "../../wxss/test.wxss"; */
+
+swiper{
+  width: 100%;
+  height: 230px;
+}
+
+image{
+width: 100%;
+}

@@ -1,0 +1,5 @@
+<!--pages/index2/index2.wxml-->
+<view>
+  这是index2页面
+  <header></header>
+</view>

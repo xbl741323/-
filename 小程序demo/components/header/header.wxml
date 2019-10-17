@@ -1,0 +1,6 @@
+<!--components/header/header.wxml-->
+<view>{{cValue}}
+  <view>
+    <slot></slot>
+  </view>
+</view>

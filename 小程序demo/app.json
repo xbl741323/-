@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index2/index2",
     "pages/logs/logs",
     "pages/message/message"
   ],
@@ -9,30 +10,30 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh":true
+    "enablePullDownRefresh": true
   },
   "tabBar": {
-  "color": "#aaa",
-  "selectedColor": "#f69f1f",
+    "color": "#aaa",
+    "selectedColor": "#f69f1f",
     "list": [
       {
-      "pagePath": "pages/index/index",
-      "text": "主页",
-      "iconPath": "icons/index.png",
-      "selectedIconPath": "icons/index_active.png"
-    },
-    {
-      "pagePath": "pages/logs/logs",
-      "text": "日志",
-      "iconPath": "icons/log.png",
-      "selectedIconPath": "icons/log_active.png"
-    },
-    {
-      "pagePath": "pages/message/message",
-      "text": "留言",
-      "iconPath": "icons/time.png",
-      "selectedIconPath": "icons/time_active.png"
-    }
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "icons/index.png",
+        "selectedIconPath": "icons/index_active.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "icons/log.png",
+        "selectedIconPath": "icons/log_active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "留言",
+        "iconPath": "icons/time.png",
+        "selectedIconPath": "icons/time_active.png"
+      }
     ]
   },
   "sitemapLocation": "sitemap.json"

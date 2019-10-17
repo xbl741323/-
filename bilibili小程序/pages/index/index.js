@@ -1,54 +1,137 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    //被点击的首页导航的菜单的索引
+    currentIndexNav: 0,
+    //首页导航数据
+    navList: [],
+    //轮播图数据
+    swiperList: [],
+    //视频展示数据
+    videosList: []
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+
+  //点击导航首页按钮
+  activeNav(e) {
+    console.log(e)
+    this.setData({
+      currentIndexNav: e.currentTarget.dataset.index
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
+  /*
+  获取首页导航数据
+   */
+  getNavList() {
+    let that = this;
+    //利用小程序内置发送请求的方法
+    wx.request({
+      url: 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/navList',
+      success(res) {
+        // console.log(res)
+        if (res.data.code == 0) {
+          that.setData({
+            navList: res.data.data.navList
           })
         }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      }
     })
+  },
+  /*
+  获取轮播图数据
+   */
+  getSwiperList() {
+    let that = this
+    wx.request({
+      url: 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/swiperList',
+      success(res) {
+        // console.log(res)
+        if (res.data.code == 0) {
+          that.setData({
+            swiperList: res.data.data.swiperList
+          })
+        }
+      }
+    })
+  },
+  /*
+  获取视频数据
+   */
+  getVideoList() {
+    let that = this;
+    wx.request({
+      url: 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/videosList',
+      success(res) {
+        console.log(res)
+        if (res.data.code == 0) {
+          that.setData({
+            videosList: res.data.data.videosList
+          })
+        }
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    //获取首页导航数据
+    this.getNavList(),
+      //获取轮播图数据
+      this.getSwiperList(),
+      //获取视频数据
+      this.getVideoList()
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
   }
 })

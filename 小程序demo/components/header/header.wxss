@@ -1,0 +1,8 @@
+/* components/header/header.wxss */
+view{
+  width: 200px;
+  height: 200px;
+  background-color: lightyellow;
+  font-size: 40px;
+  text-align: center;
+}

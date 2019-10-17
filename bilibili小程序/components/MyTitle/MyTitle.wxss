@@ -1,0 +1,48 @@
+.my_title {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  flex: 7;
+  display: flex;
+}
+
+.logo image {
+  width: 120rpx;
+  height: 60rpx;
+}
+
+.search_icon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search_icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.user_icon {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.user_icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.down_app {
+  flex: 3;
+  background: pink;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
