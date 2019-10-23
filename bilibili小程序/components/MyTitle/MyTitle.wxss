@@ -37,7 +37,7 @@
 
 .down_app {
   flex: 3;
-  background: pink;
+  background: #fb7299;
   color: #fff;
   justify-content: center;
   align-items: center;

@@ -1,120 +1,29 @@
+// pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    //被点击的首页导航的菜单的索引
-    currentIndexNav: 0,
-    //首页导航数据
-    navList: [{
-      "text": "首页",
-      "id": 0
-    },
-      {
-        "text": "动画",
-        "id": 0
-      },
-      {
-        "text": "番剧",
-        "id": 0
-      },
-      {
-        "text": "国创",
-        "id": 0
-      },
-      {
-        "text": "音乐",
-        "id": 0
-      },
-      {
-        "text": "舞蹈",
-        "id": 0
-      },
-      {
-        "text": "科技",
-        "id": 0
-      },
-      {
-        "text": "游戏",
-        "id": 0
-      },
-      {
-        "text": "娱乐",
-        "id": 0
-      },
-      {
-        "text": "鬼畜",
-        "id": 0
-      },
-      {
-        "text": "电影",
-        "id": 0
-      },
-      {
-        "text": "电视剧",
-        "id": 0
-      },
-      {
-        "text": "纪录片",
-        "id": 0
-      },
-      {
-        "text": "影视",
-        "id": 0
-      },
-      {
-        "text": "时尚",
-        "id": 0
-      },
-      {
-        "text": "生活",
-        "id": 0
-      },
-      {
-        "text": "广告",
-        "id": 0
-      }, {
-        "text": "直播",
-        "id": 0
-      },
-      {
-        "text": "相册",
-        "id": 0
-      }],
-    //轮播图数据
-    swiperList: [
-      {
-        "url": "https://i0.hdslb.com/bfs/archive/042c1f77a19e81c024609bff69e8ebbd37a25803.jpg@880w_440h.jpg",
-        "link": ""
-      },
-      {
-        "url": "https://i0.hdslb.com/bfs/sycp/creative_img/201910/534998f20a27a1dcfb66d9e733996676.jpg@880w_440h.jpg",
-        "link": ""
-      },
-      {
-        "url": "https://i0.hdslb.com/bfs/sycp/creative_img/201910/6567c1c482a1ce136b9bfa42ca63e761.jpg@880w_440h.jpg",
-        "link": ""
-      },
-      {
-        "url": "https://i0.hdslb.com/bfs/archive/0f0d3a7b610ed6d8d25701a540c46729615f403d.jpg@880w_440h.jpg",
-        "link": ""
-      },
-      {
-        "url": "https://i0.hdslb.com/bfs/archive/f095fc009d04b46f6b6dc26273e905499144e827.jpg@880w_440h.jpg",
-        "link": ""
-      }
-    ],
-    //视频展示数据
-    videosList: [{
+    //视频详情
+    videoInfo: {
       "id": 0,
-      "link": "",
-      "imgSrc": "//i1.hdslb.com/bfs/archive/9841123fa247fa1d1aaaa24519a3f5deb361bb81.jpg@160w_100h.jpg",
-      "desc": "【150骑英灵】不要眨眼！你根本不知道fgo可以有多帅！史上最宏大的FATE系列！命运冠位指定三周年纪念!",
-      "playCount": "52.7万",
-      "commentCount": "989",
-      "videoSrc": "http://shirtinycn.cn-gd.ufileos.com/miku%E4%BA%94%E5%8D%81%E9%9F%B3.mp4?UCloudPublicKey=ickfWsc9PEDGvs-kVYExz-YA0015LcL6NYRd4Cfi&Signature=L9W%2FyIjp0ef2BQ1Kp0eWam1HMbU%3D&Expires=1571303574"
+      "videoSrc": "http://shirtinycn.cn-gd.ufileos.com/%E4%BA%94%E5%8D%81%E9%9F%B3.mp4?UCloudPublicKey=TOKEN_af61cb55-9a4b-4fec-b9b5-48c87417e8f4&Signature=AFJhi4uVt%2BVyGbmohVdkobUBefA%3D&Expires=1886661951",
+      "videoTitle": "【150骑英灵】不要眨眼！你根本不知道fgo可以有多帅！史上最宏大的FATE系列！命运冠位指定三周年纪念!",
+      "author": "字幕君",
+      "playCount": "24.9万",
+      "commentCount": "1989",
+      "date": "12-25"
     },
+    othersVideo: [{
+        "id": 0,
+        "link": "",
+        "imgSrc": "//i1.hdslb.com/bfs/archive/9841123fa247fa1d1aaaa24519a3f5deb361bb81.jpg@160w_100h.jpg",
+        "desc": "【150骑英灵】不要眨眼！你根本不知道fgo可以有多帅！史上最宏大的FATE系列！命运冠位指定三周年纪念!",
+        "playCount": "52.7万",
+        "commentCount": "989",
+        "videoSrc": "http://shirtinycn.cn-gd.ufileos.com/miku%E4%BA%94%E5%8D%81%E9%9F%B3.mp4?UCloudPublicKey=ickfWsc9PEDGvs-kVYExz-YA0015LcL6NYRd4Cfi&Signature=L9W%2FyIjp0ef2BQ1Kp0eWam1HMbU%3D&Expires=1571303574"
+      },
       {
         "id": 1,
         "link": "",
@@ -177,81 +86,35 @@ Page({
         "playCount": "52.7万",
         "commentCount": "989",
         "videoSrc": "http://shirtinycn.cn-gd.ufileos.com/miku%E4%BA%94%E5%8D%81%E9%9F%B3.mp4?UCloudPublicKey=ickfWsc9PEDGvs-kVYExz-YA0015LcL6NYRd4Cfi&Signature=L9W%2FyIjp0ef2BQ1Kp0eWam1HMbU%3D&Expires=1571303574"
-      }]
-  },
-
-  //点击导航首页按钮
-  activeNav(e) {
-    // console.log(e)
-    this.setData({
-      currentIndexNav: e.currentTarget.dataset.index
-    })
-  },
-  /*
-  获取首页导航数据
-   */
-  getNavList() {
-    let that = this;
-    //利用小程序内置发送请求的方法
-    wx.request({
-      url: 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/navList',
-      success(res) {
-        // console.log(res)
-        if (res.data.code == 0) {
-          that.setData({
-            navList: res.data.data.navList
-          })
-        }
       }
-    })
+    ]
   },
-  /*
-  获取轮播图数据
-   */
-  getSwiperList() {
-    let that = this
-    wx.request({
-      url: 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/swiperList',
-      success(res) {
-        // console.log(res)
-        if (res.data.code == 0) {
-          that.setData({
-            swiperList: res.data.data.swiperList
-          })
-        }
-      }
-    })
-  },
-  /*
-  获取视频数据
-   */
-  getVideoList() {
-    let that = this;
-    wx.request({
-      url: 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/videosList',
-      success(res) {
-        // console.log(res)
-        if (res.data.code == 0) {
-          that.setData({
-            videosList: res.data.data.videosList
-          })
-        }
-      }
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    //获取首页导航数据
-    this.getNavList(),
-      //获取轮播图数据
-      this.getSwiperList(),
-      //获取视频数据
-      this.getVideoList()
+    // console.log(options)
+    //获取对应视频id
+    let videoId = options.id
+    this.getCurrentVedio()
   },
-
+  /*
+  根据视频id获取视频详情
+   */
+  getCurrentVedio() {
+    let that = this;
+    wx.request({
+      url: 'https://4cd5dddd-21c4-49d7-939b-5cf759a7914f.mock.pstmn.io/videoDetail',
+      success(res) {
+        // console.log(res)
+        if (res.data.code == 0) {
+          that.setData({
+            videoInfo: res.data.data.videoInfo
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
